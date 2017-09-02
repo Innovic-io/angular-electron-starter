@@ -2,9 +2,13 @@
 
 Build desktop apps using Angular4+ and Electron.
 
+<img width="50" src="https://angular.io/assets/images/logos/angular/angular.svg" />
+<img width="150" src="https://camo.githubusercontent.com/11e7cfd04eceb1ea7464e99edda0e7000487f343/68747470733a2f2f656c656374726f6e2e61746f6d2e696f2f696d616765732f656c656374726f6e2d6c6f676f2e737667" />
+
 On the top off: 
 
  - Angular 4+ 
+ - NodeJS STL included
  - Electron 1.7.5+
  - REDUX - NgRx 4.x +
  - Semantic UI
