@@ -1,0 +1,23 @@
+<div>
+  <h1 class="ui header">File list</h1>
+  <hr>
+
+  <div>
+    For hot module reloading run
+    <pre>npm run start:hmr</pre>
+  </div>
+
+  <div class="ui divider"></div>
+
+  <div class="ui form">
+    <div class="field">
+      <label>Path:</label>
+      <div class="ui icon input" [ngClass]="{'loading': loading$ | async}">
+        <input type="text" [(ngModel)]="localSearch" (input)="searchPath()" placeholder="Path to home directory...">
+        <i class="search icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <app-list-component [items]="directories$ | async"></app-list-component>
+</div>

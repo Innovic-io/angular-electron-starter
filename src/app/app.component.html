@@ -1,0 +1,30 @@
+<nav class="ui fixed inverted menu">
+  <a [routerLink]=" ['./'] " routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}" class="header item">
+    <img class="logo" src="assets/img/angular-logo.png">
+    Angular2+ Electron
+  </a>
+  <a [routerLink]=" ['./home'] "
+     class="item"
+     routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Home
+  </a>
+  <a [routerLink]=" ['./detail'] "
+     class="item"
+     routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Detail
+  </a>
+  <a [routerLink]=" ['./barrel'] "
+     class="item"
+     routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    Barrel
+  </a>
+  <a [routerLink]=" ['./about'] "
+     class="item"
+     routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+    About
+  </a>
+</nav>
+
+<main class="ui main container">
+  <router-outlet></router-outlet>
+</main>
