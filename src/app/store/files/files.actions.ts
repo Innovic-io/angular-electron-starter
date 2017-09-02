@@ -13,7 +13,7 @@ export class GetFilesAction implements Action {
 export class GetFilesActionSuccess implements Action {
   readonly type = GET_FILES_SUCCESS;
 
-  constructor(public payload: any) {}
+  constructor(public payload: string[]) {}
 }
 
 export class GetFilesActionFail implements Action {

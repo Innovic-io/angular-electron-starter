@@ -1,4 +1,4 @@
-# Angular 2+ Electron Starter
+# Angular 4+ Electron Starter
 
 Build desktop apps using Angular4+ and Electron.
 
