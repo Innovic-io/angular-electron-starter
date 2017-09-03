@@ -4,7 +4,6 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 
 import { ENV_PROVIDERS } from './environment';
@@ -33,9 +32,6 @@ import { SharedModule } from './shared/shared.module';
     HomeComponent,
     NoContentComponent
   ],
-  /**
-   * Import Angular's modules.
-   */
   imports: [
     BrowserModule,
     FormsModule,
@@ -45,7 +41,6 @@ import { SharedModule } from './shared/shared.module';
     EffectsModule.forRoot([
       FilesEffects
     ]),
-    (ENV !== 'production') ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   /**

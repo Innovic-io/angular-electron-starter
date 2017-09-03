@@ -106,7 +106,6 @@
     "@angular/compiler-cli": "~4.3.1",
     "@types/hammerjs": "^2.0.34",
     "ngrx-store-freeze": "^0.1.9",
-    "@ngrx/store-devtools": "^4.0.0",
     "@types/jasmine": "2.5.45",
     "@types/node": "^7.0.39",
     "@types/source-map": "^0.5.0",
