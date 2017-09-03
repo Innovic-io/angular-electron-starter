@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const helpers = require('./helpers');
+const pkg = require('../package.json');
 
 /**
  * Webpack Plugins
@@ -26,7 +27,7 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2+ Electron Starter',
+  title: pkg.description,
   baseUrl: './',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR

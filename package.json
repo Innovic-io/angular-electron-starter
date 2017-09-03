@@ -13,7 +13,7 @@
     "webpack",
     "typescript"
   ],
-  "author": "",
+  "author": "Vlado Tešanović <vlado.tesanovic@gmail.com>",
   "homepage": "",
   "license": "MIT",
   "scripts": {
@@ -173,10 +173,10 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Innovic-io/angular-electron-starter"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/Innovic-io/angular-electron-starter/issues"
   },
   "engines": {
     "node": ">= 4.2.1",
