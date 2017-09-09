@@ -8,7 +8,7 @@ import { PreloadAllModules, RouterModule } from '@angular/router';
 
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
-// App is our top level component
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
@@ -21,6 +21,7 @@ import { FsService } from './services/fs.service';
 import { metaReducers, reducers } from './store/index';
 import { FilesEffects } from './store/files/files.effects';
 import { SharedModule } from './shared/shared.module';
+import { DatabaseService } from './services/db.service';
 
 @NgModule({
   bootstrap: [
@@ -47,8 +48,9 @@ import { SharedModule } from './shared/shared.module';
    * Expose our Services and Providers into Angular's dependency injection.
    */
   providers: [
-    ENV_PROVIDERS,
-    FsService
+    FsService,
+    DatabaseService,
+    ENV_PROVIDERS
   ]
 })
 export class AppModule {

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { readdir, statSync } from 'fs';
+import { statSync, readdirSync } from 'fs';
 import { normalize, join } from 'path';
 import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
 
 @Injectable()
 export class FsService {
@@ -13,17 +14,16 @@ export class FsService {
    * @returns {any}
    */
   getDirectoriesFromPath(directory): Observable<any> {
-    return Observable.create((observer) => {
-      readdir(normalize(directory), (err, list) => {
+    return Observable.create((observer: Observer<string[]>) => {
 
-        const directories = list.filter((file) => {
+      const dir = readdirSync(directory)
+        .filter((file) => {
           const path = normalize(join(directory, file));
-
           return statSync(path).isDirectory() && file.charAt(0) !== '.';
         });
 
-        observer.next(directories);
-      });
+      observer.next(dir);
+      observer.complete();
     });
   }
 }

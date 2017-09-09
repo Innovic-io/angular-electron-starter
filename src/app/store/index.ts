@@ -1,6 +1,10 @@
 import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { IFiles, fileReducer } from './files/files.reducer';
+
+import { fileReducer, IFiles } from './files/files.reducer';
+import { DatabaseService } from '../services/db.service';
+
+const db = new DatabaseService();
 
 // all new reducers should be define here
 export interface IAppState {
@@ -14,9 +18,44 @@ export const reducers: ActionReducerMap<IAppState> = {
 
 // console.log all actions
 export function logger(reducer: ActionReducer<IAppState>): ActionReducer<any, any> {
-  return function(state: IAppState, action: any): IAppState {
+  return function (state: IAppState, action: any): IAppState {
     console.log('state', state);
     console.log('action', action);
+
+    return reducer(state, action);
+  };
+}
+
+/**
+ * Persist store on file system
+ *
+ * @param {ActionReducer<IAppState>} reducer
+ * @returns {ActionReducer<any, any>}
+ */
+export function persist(reducer: ActionReducer<IAppState>): ActionReducer<any, any> {
+  return function (state: IAppState, action: { type: string }): IAppState {
+
+    if (state) {
+      db.setState(state);
+    }
+
+    console.log(action.type, state);
+    /*
+    if (action.type === '@ngrx/store/init') {
+      // console.log('first action');
+      // console.log(db.getState());
+      state = {
+        files: {
+          directories: [
+            'test 1', 'test 2'
+          ]
+        }
+      };
+    } else {
+      // rest data
+      console.log('rest actions');
+    }
+    */
 
     return reducer(state, action);
   };
@@ -29,5 +68,5 @@ export function logger(reducer: ActionReducer<IAppState>): ActionReducer<any, an
  */
 
 export const metaReducers: MetaReducer<IAppState>[] = (ENV !== 'production')
-  ? [logger, storeFreeze]
-  : [];
+  ? [storeFreeze, persist]
+  : [persist];

@@ -14,7 +14,6 @@ export class FilesEffects {
   @Effect()
   addFeed$ = this.actions$
     .ofType(filesActions.GET_FILES)
-    .debounceTime(1000)
     .switchMap((action: filesActions.GetFilesAction) => {
 
       return this.fs.getDirectoriesFromPath(action.payload)
