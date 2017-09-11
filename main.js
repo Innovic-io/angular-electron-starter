@@ -76,7 +76,7 @@ function createWindow() {
     width,
     height,
     title: pkg.name,
-    icon: path.join(__dirname, 'src/assets/img/angular-logo.png')
+    icon: path.join(__dirname, 'icons/logo.png')
   };
 
   // Initialize the window to our specified dimensions

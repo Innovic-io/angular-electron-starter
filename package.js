@@ -30,7 +30,7 @@ function pack(plat, arch, cb) {
   // there is no darwin ia32 electron
   if (plat === 'darwin' && arch === 'ia32') return;
 
-  let icon = 'src/assets/img/angular-logo.png';
+  let icon = 'icons/logo';
 
   // @TODO provide icon extensions for maxos and windows
   if (icon) {
