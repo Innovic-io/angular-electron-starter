@@ -55,6 +55,7 @@ npm run electron:mac
 - Add custom NodeJS library?
 
 Create reference to it in: ./config/webpack.common.js ( line 395 )
+Add it as dependency in package.json
 
 ### API
 

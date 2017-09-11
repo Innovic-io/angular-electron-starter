@@ -21,7 +21,6 @@ import { FsService } from './services/fs.service';
 import { metaReducers, reducers } from './store/index';
 import { FilesEffects } from './store/files/files.effects';
 import { SharedModule } from './shared/shared.module';
-import { DatabaseService } from './services/db.service';
 
 @NgModule({
   bootstrap: [
@@ -49,7 +48,6 @@ import { DatabaseService } from './services/db.service';
    */
   providers: [
     FsService,
-    DatabaseService,
     ENV_PROVIDERS
   ]
 })
