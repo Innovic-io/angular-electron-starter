@@ -71,12 +71,27 @@ function createWindow() {
   const menu = Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(menu)
 
+  const iconSrc = 'icons/logo';
+
+  const iconExtension = () => {
+
+    const plat = process.platform;
+    let extension = '.png';
+
+    if (plat === 'darwin') {
+      extension = '.icns';
+    } else if (plat === 'win32') {
+      extension = '.ico';
+    }
+    return extension;
+  }
+
   // Create the browser window.
   const options = {
     width,
     height,
     title: pkg.name,
-    icon: path.join(__dirname, 'icons/logo.png')
+    icon: path.join(__dirname, iconSrc + iconExtension())
   };
 
   // Initialize the window to our specified dimensions
