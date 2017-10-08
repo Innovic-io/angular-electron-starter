@@ -44,7 +44,7 @@
     "github-deploy": "npm run github-deploy:dev",
     "lint": "npm run tslint \"src/**/*.ts\"",
     "node": "node",
-    "postinstall": "npm run webdriver:update",
+    "postinstall": "npm run electron:rebuild",
     "postversion": "git push && git push --tags",
     "preclean:install": "npm run clean",
     "preversion": "npm test",
@@ -68,6 +68,7 @@
     "watch:prod": "npm run build:prod -- --watch",
     "watch:test": "npm run test -- --auto-watch --no-single-run",
     "watch": "npm run watch:dev",
+    "electron:rebuild": "electron-rebuild",
     "electron:pre": "copyfiles main.js dist && copyfiles package.json dist && copyfiles ./icons/* ./dist && npm --prefix ./dist install ./dist --production",
     "electron:dev": "cross-env NODE_ENV=development electron .",
     "electron:prod": "npm run build:aot:prod && npm run electron:pre && electron ./dist",
@@ -168,6 +169,7 @@
     "webpack-merge": "~4.1.0",
     "electron": "1.7.5",
     "electron-packager": "8.7.2",
+    "electron-rebuild": "^1.6.0",
     "electron-reload": "^1.1.0"
   },
   "repository": {
