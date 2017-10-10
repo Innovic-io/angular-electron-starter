@@ -402,6 +402,7 @@ module.exports = function (options) {
       net: "require('net')",
       os: "require('os')",
       path: "require('path')",
+      lodash: "require('lodash')",
       querystring: "require('querystring')",
       readline: "require('readline')",
       repl: "require('repl')",

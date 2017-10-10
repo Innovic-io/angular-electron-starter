@@ -47,7 +47,7 @@ npm run electron:mac
 
 ### ToDo
 
-- Implement Windows installer
+- Implement Windows installer ( https://github.com/unindented/electron-installer-windows )
 - Implements MacOS signing ( https://github.com/electron-userland/electron-osx-sign/wiki/1.-Getting-Started )
 
 ### HowTo

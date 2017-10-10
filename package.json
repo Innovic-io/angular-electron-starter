@@ -81,7 +81,9 @@
     "webpack-dev-server": "node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
   "devDependencies": {
     "@angular/animations": "~4.3.1",
     "@angular/common": "~4.3.1",
@@ -170,7 +172,8 @@
     "electron": "1.7.5",
     "electron-packager": "8.7.2",
     "electron-rebuild": "^1.6.0",
-    "electron-reload": "^1.1.0"
+    "electron-reload": "^1.1.0",
+    "electron-winstaller": "^2.6.3"
   },
   "repository": {
     "type": "git",
