@@ -45,9 +45,16 @@ npm run electron:windows
 npm run electron:mac
 ```
 
+### Windows installer
+
+*Note, you need to do this from Windows machine!*
+
+```bash
+node ./windows-installer.js
+```
+
 ### ToDo
 
-- Implement Windows installer ( https://github.com/unindented/electron-installer-windows )
 - Implements MacOS signing ( https://github.com/electron-userland/electron-osx-sign/wiki/1.-Getting-Started )
 
 ### HowTo
